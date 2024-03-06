@@ -327,7 +327,7 @@ trainer.train()
 
 """I cleared the output of the cell above because I stopped the training early, and it produced a long, ugly error message.
 
-### 8. Drum Roll... Try the Trained Model!
+### 8. Try the Trained Model!
 
 It's a good idea to kill the current process so that you don't run out of memory loading the base model again on top of the model we just trained. Go to `Kernel > Restart Kernel` or kill the process via the Terminal (`nvidia smi` > `kill [PID]`).
 
@@ -381,13 +381,4 @@ ft_model.eval()
 with torch.no_grad():
     print(eval_tokenizer.decode(ft_model.generate(**model_input, max_new_tokens=100)[0], skip_special_tokens=True))
 
-"""### Sweet... it worked! The fine-tuned model now understands the meaning representation!
 
-It's not excellent, but I only fine-tuned it on 500 steps. The longer you fine-tune, the better you can expect it to perform (just watch for overfitting).  
-
-"""
-    https://colab.research.google.com/drive/1BpvZ_VX3dEsgXrHI4dTW5ViainZb0yYh
-"""
-
-I hope you enjoyed this tutorial on fine-tuning Microsoft's Phi-2.
-"""
